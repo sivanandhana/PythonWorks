@@ -1,0 +1,10 @@
+[
+    {"rol":123,"name":"manu","gender":"male","course":"Django"},
+    {"rol":569,"name":"kavya","gender":"female","course":"testing"},
+    {"rol":569,"name":"hari","gender":"male","course":"testing"},
+    {"rol":159,"name":"vishnu","gender":"male","course":"Django"},
+    {"rol":753,"name":"arun","gender":"male","course":"mearn stack"},
+    {"rol":852,"name":"vrindha","gender":"female","course":"Django"},
+    {"rol":456,"name":"rahul","gender":"male","course":"flutter"},
+    {"rol":951,"name":"yadhu","gender":"male","course":"graphics"}
+]
