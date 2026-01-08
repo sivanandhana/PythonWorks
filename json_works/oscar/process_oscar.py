@@ -33,5 +33,7 @@ total_oscar_movies =[om.get("oscar") for om in data ]
 
 less_runtime = [rt.get("name") for rt in data if rt.get("duration")<"90 min"]
 
+
+
 print(less_runtime)
 
