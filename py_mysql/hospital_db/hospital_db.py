@@ -1,6 +1,6 @@
 from mysql import connector
 
-class Student:
+class Hospitals:
 
     def __init__(self):
         
@@ -10,7 +10,7 @@ class Student:
                 host ="localhost",
                 user ="root",
                 password ="Password@123",
-                database ="student_db",
+                database ="hospital_management_db",
                 use_pure = True
             )
 
@@ -20,6 +20,7 @@ class Student:
         except Exception as e:
 
             print(e)
+
 
     def POST(self,**kwargs):
 
@@ -37,7 +38,7 @@ class Student:
             values= values.rstrip(",")
 
 
-            query=f"insert into student({coloumns})values({values})"
+            query=f"insert into hospital({coloumns})values({values})"
 
             data=[v for k,v in kwargs.items()]
 
@@ -45,7 +46,7 @@ class Student:
 
             self.connection.commit()
 
-            print("records inserted")
+            print("records inserted....")
 
         except Exception as e:
 
@@ -56,7 +57,7 @@ class Student:
 
         try:
 
-            query="select * from student"
+            query="select * from hospital"
 
             self.cursor.execute(query)
 
@@ -70,12 +71,12 @@ class Student:
 
             print(e)
 
-    def GET(self,id=None):
+    def GET(self,patient_id=None):
             
         try:
 
-            query="select * from student where id=%s"
-            data=(id,)
+            query="select * from hospital where patient_id=%s"
+            data=(patient_id,)
             self.cursor.execute(query,data)
 
             records=self.cursor.fetchone()
@@ -86,12 +87,12 @@ class Student:
 
             print(e)
 
-    def DELETE(self,id=None):
+    def DELETE(self,patient_id=None):
 
         try:
 
-            query="delete from student where id=%s"
-            data=(id,)
+            query="delete from hospital where patient_id=%s"
+            data=(patient_id,)
             self.cursor.execute(query,data)
             self.connection.commit()
             print("record deleted...")
@@ -100,7 +101,7 @@ class Student:
 
             print(e)
             
-    def UPDATE(self,id,**kwargs):
+    def PUT(self,patient_id,**kwargs):
 
         try:
 
@@ -112,7 +113,7 @@ class Student:
 
             placeholder=placeholder.rstrip(",")
 
-            query =f"update st set {placeholder} where id ={id}"
+            query =f"update hospital set {placeholder} where id ={patient_id}"
 
             data =[v for k,v in kwargs.items()]
 
@@ -125,25 +126,16 @@ class Student:
         except Exception as e:
 
             print(e)
-        
-student_insatance=Student()
 
-# # student_insatance.POST(name="arya",age=18,email="arya@gamil.com",department="btech",fees=600000)
-# student_insatance.POST(name="vishnu",age=20,email="vishnu@gmail.com",department="auto_mobile",fees=3500000)
-# student_insatance.POST(name="kavya",age=18,email="kavya@gamil.com",department="BBA",fees=300000)
-# student_insatance.POST(name="rahul",age=18,email="rahul@gamil.com",department="BCA",fees=500000)
-# student_insatance.POST(name="arun",age=18,email="arun@gamil.com",department="Bsc computer science",fees=500000)
-# student_insatance.POST(name="nila",age=18,email="nila@gamil.com",department="Bsc maths",fees=500000)
+hospital_instance = Hospitals()
 
-student_insatance.GET()
+# hospital_instance.POST(name ="sreyas",age=24,gender ="male",doctor_name="navas",phone =8975643210)
+# hospital_instance.POST(name ="ram",age=21,gender ="male",doctor_name="surya",phone =9568754623)
+# hospital_instance.POST(name ="rahul",age=18,gender ="male",doctor_name="hima",phone =9875632145)
+# hospital_instance.POST(name ="gokul",age=15,gender ="male",doctor_name="smitha",phone =7563298546)
 
+# hospital_instance.GET(2)
 
-# student_insatance.GET(2)
+# hospital_instance.GET()
 
-# student_insatance.DELETE(3)
-
-
-
-# student_insatance.PUT(5,fee=600000)
-
-# student_insatance.select_one(5)
+# hospital_instance.PUT(patient_id=3,age=20)
