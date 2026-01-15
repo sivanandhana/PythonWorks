@@ -22,7 +22,7 @@ class Hospitals:
             print(e)
 
 
-    def POST(self,**kwargs):
+    def post(self,**kwargs):
 
         try:
 
@@ -53,7 +53,7 @@ class Hospitals:
             print(e)
 
 
-    def GET(self):
+    def get(self):
 
         try:
 
@@ -71,7 +71,7 @@ class Hospitals:
 
             print(e)
 
-    def GET(self,patient_id=None):
+    def get(self,patient_id=None):
             
         try:
 
@@ -87,7 +87,7 @@ class Hospitals:
 
             print(e)
 
-    def DELETE(self,patient_id=None):
+    def delete(self,patient_id=None):
 
         try:
 
@@ -101,7 +101,7 @@ class Hospitals:
 
             print(e)
             
-    def PUT(self,patient_id,**kwargs):
+    def put(self,patient_id,**kwargs):
 
         try:
 
@@ -129,13 +129,13 @@ class Hospitals:
 
 hospital_instance = Hospitals()
 
-# hospital_instance.POST(name ="sreyas",age=24,gender ="male",doctor_name="navas",phone =8975643210)
-# hospital_instance.POST(name ="ram",age=21,gender ="male",doctor_name="surya",phone =9568754623)
-# hospital_instance.POST(name ="rahul",age=18,gender ="male",doctor_name="hima",phone =9875632145)
-# hospital_instance.POST(name ="gokul",age=15,gender ="male",doctor_name="smitha",phone =7563298546)
+# hospital_instance.post(name ="sreyas",age=24,gender ="male",doctor_name="navas",phone =8975643210)
+# hospital_instance.post(name ="ram",age=21,gender ="male",doctor_name="surya",phone =9568754623)
+# hospital_instance.post(name ="rahul",age=18,gender ="male",doctor_name="hima",phone =9875632145)
+# hospital_instance.post(name ="gokul",age=15,gender ="male",doctor_name="smitha",phone =7563298546)
 
-# hospital_instance.GET(2)
+# hospital_instance.get(2)
 
-# hospital_instance.GET()
+# hospital_instance.get()
 
-# hospital_instance.PUT(patient_id=3,age=20)
+# hospital_instance.put(patient_id=3,age=20)
